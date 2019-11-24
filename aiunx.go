@@ -9,9 +9,6 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
-
-	_ "github.com/aichy126/aigobuild/cmd"
-	"github.com/aichy126/aigobuild/cmd/commands"
 )
 
 var usageDoc = `
@@ -34,14 +31,14 @@ func cmdHelp(args []string) {
 		return
 	}
 
-	command := args[0]
+	// command := args[0]
 
-	for _, c := range commands.AvailableCommands {
-		if c.Name == command {
-			fmt.Println(c.Usage)
-			return
-		}
-	}
+	// for _, c := range commands.AvailableCommands {
+	// 	if c.Name == command {
+	// 		fmt.Println(c.Usage)
+	// 		return
+	// 	}
+	// }
 	fmt.Println("Unkonwn command to help.")
 }
 

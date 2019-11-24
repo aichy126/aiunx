@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"path"
@@ -14,7 +13,7 @@ import (
 var usageDoc = `
 识别各种解压缩工具将目标文件解药到目录.
 前提是你要已经安装各种解压缩工具.
-可识别zip rar 7z,目前不支持密码解压
+可识别zip rar 7z gz,目前不支持密码解压
 `
 
 func usage() {
@@ -26,20 +25,6 @@ func cmdHelp(args []string) {
 		usage()
 		return
 	}
-	if len(args) > 1 {
-		log.Fatal("too many args")
-		return
-	}
-
-	// command := args[0]
-
-	// for _, c := range commands.AvailableCommands {
-	// 	if c.Name == command {
-	// 		fmt.Println(c.Usage)
-	// 		return
-	// 	}
-	// }
-	fmt.Println("Unkonwn command to help.")
 }
 
 func main() {
